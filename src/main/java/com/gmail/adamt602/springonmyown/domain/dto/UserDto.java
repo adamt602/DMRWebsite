@@ -1,2 +1,19 @@
-package com.gmail.adamt602.springonmyown.domain.dto;public class UserDto {
+package com.gmail.adamt602.springonmyown.domain.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class UserDto {
+
+    private Long id;
+
+    private String name;
+
+    private double money;
 }

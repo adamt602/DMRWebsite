@@ -1,2 +1,29 @@
-package com.gmail.adamt602.springonmyown.mappers.impl;public class UserMapperImpl {
+package com.gmail.adamt602.springonmyown.mappers.impl;
+
+import com.gmail.adamt602.springonmyown.domain.UserEntity;
+import com.gmail.adamt602.springonmyown.domain.dto.UserDto;
+import com.gmail.adamt602.springonmyown.mappers.Mapper;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserMapperImpl implements Mapper<UserEntity, UserDto> {
+
+    private ModelMapper modelMapper;
+
+    public UserMapperImpl(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
+
+    @Override
+    public UserDto mapTo(UserEntity userEntity) {
+        return modelMapper.map(userEntity, UserDto.class);
+    }
+
+    @Override
+    public UserEntity mapFrom(UserDto userDto) {
+        return modelMapper.map(userDto, UserEntity.class);
+    }
+
+
 }
