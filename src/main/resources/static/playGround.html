@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <title>Home page</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+        overflow: hidden;
+        display: flex;
+        justify-content: left;
+        padding: 1.4rem 0;
+        z-index:99;
+
+    }
+
+    .dropdown {
+        display: inline-block;
+        overflow: hidden;
+        margin: 0 1.6rem;
+        z-index: 1;
+    }
+
+    .dropdown .dropbtn {
+        font-size: 1.6rem;
+        color: var(--accentColor);
+    }
+
+    .dropdown-content {
+        padding-top: 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        /*top: 6.1rem;*/
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        background: white;
+    }
+
+    .hidden {
+        opacity: 0;
+        display: none;
+    }
+
+    /* Added styles for the dark transparent background after dropdown content */
+    .dropdown-content::after {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 6, 9, 0.63); /* Adjust the alpha value for transparency */
+    }
+
+
+    .dropdown-content a {
+        color: black;
+        padding: 1.2rem 1.6rem;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        max-height: 100vh;
+    }
+
+    .dropdown:hover .show{
+        opacity: 1;
+        display: block;
+    }
+
+
+</style>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Home</a>
+        <div class="dropdown-content hidden show">
+            <a href="#">Hi</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Shop</a>
+        <div class="dropdown-content hidden show">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content hidden show" >
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+</div>
+
+<p>Hello</p>
+
+<script src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
